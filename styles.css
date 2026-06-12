@@ -463,7 +463,7 @@ h1, h2, h3, h4 {
     padding: 10px 14px;
     font-size: 0.92rem;
     font-weight: 500;
-    color: var(--ink-soft);
+    color: rgba(255, 255, 255, 0.9);
     border-radius: 100px;
     transition: all 0.25s var(--ease-out);
     position: relative;
@@ -471,6 +471,13 @@ h1, h2, h3, h4 {
 }
 
 .nav-menu a:hover {
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.14);
+}
+
+/* Once scrolled the nav turns white, so links go dark again */
+.nav.scrolled .nav-menu a { color: var(--ink-soft); }
+.nav.scrolled .nav-menu a:hover {
     color: var(--brand);
     background: var(--brand-tint);
 }
@@ -1608,7 +1615,8 @@ h1, h2, h3, h4 {
     }
 
     .nav-menu.open { transform: translateY(0); }
-    .nav-menu a { width: 100%; padding: 14px 16px; }
+    .nav-menu a, .nav.scrolled .nav-menu a { width: 100%; padding: 14px 16px; color: var(--ink-soft); }
+    .nav-menu a:hover, .nav.scrolled .nav-menu a:hover { color: var(--brand); background: var(--brand-tint); }
 
     .menu-toggle { display: flex; }
     .nav-actions .btn { display: none; }
