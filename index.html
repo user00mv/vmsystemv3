@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VM System | Nákladní automobilová doprava po celé Evropě</title>
+    <meta name="description" content="VM System – profesionální mezinárodní, vnitrostátní a expresní přeprava nákladu. Spolehlivý partner v logistice se sídlem v Brně.">
+
+    <!-- Creato Display font from cdnfonts -->
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/creato-display">
+    <!-- Fallback modern sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+</head>
+<body>
+
+<!-- Custom cursor -->
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<!-- Page loader -->
+<div class="page-loader" id="pageLoader">
+    <div class="loader-logo">
+        <img src="images/logo.svg" alt="VM System">
+    </div>
+    <div class="loader-bar"><span></span></div>
+</div>
+
+<!-- Decorative background blobs -->
+<div class="bg-blobs" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+</div>
+
+<!-- Navigation -->
+<header class="nav" id="nav">
+    <div class="container nav-inner">
+        <a href="#home" class="nav-logo" aria-label="VM System">
+            <img src="images/logo-white.svg" alt="VM System logo" class="logo-light">
+            <img src="images/logo.svg" alt="VM System logo" class="logo-dark">
+        </a>
+
+        <nav class="nav-menu" id="navMenu">
+            <a href="#services" data-i18n="nav.services">Služby</a>
+            <a href="#about" data-i18n="nav.about">O nás</a>
+            <a href="#fleet" data-i18n="nav.fleet">Vozový park</a>
+            <a href="#career" data-i18n="nav.career">Kariéra</a>
+            <a href="#documents" data-i18n="nav.documents">Dokumenty</a>
+            <a href="#contact" data-i18n="nav.contact">Kontakt</a>
+        </nav>
+
+        <div class="nav-actions">
+            <div class="lang-switch" id="langSwitch">
+                <button class="lang-btn active" data-lang="cs">CZ</button>
+                <span class="lang-divider"></span>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+            <a href="#contact" class="btn btn-primary btn-sm" data-i18n="nav.cta">
+                <i class="fa-solid fa-truck-fast"></i>
+                <span>Objednat přepravu</span>
+            </a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+    <div class="hero-bg">
+        <img src="images/hero-trucks.jpg" alt="Vozový park VM System" class="hero-bg-img">
+        <div class="hero-overlay"></div>
+    </div>
+
+    <div class="container hero-inner">
+        <div class="hero-content">
+            <div class="hero-eyebrow reveal">
+                <span class="dot-pulse"></span>
+                <span data-i18n="hero.eyebrow">Mezinárodní přeprava · Evropa</span>
+            </div>
+
+            <h1 class="hero-title reveal" data-i18n="hero.title">
+                Jezdíme pro vás.<br>
+                <span class="hero-title-accent">Po celé Evropě.</span>
+            </h1>
+
+            <p class="hero-lead reveal" data-i18n="hero.lead">
+                Profesionální a spolehlivá nákladní doprava s individuálním přístupem.
+                Náš vozový park značky Mercedes-Benz doručí vaši zásilku včas a bezpečně.
+            </p>
+
+            <div class="hero-cta reveal">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <span data-i18n="hero.ctaPrimary">Objednat přepravu</span>
+                </a>
+                <a href="#services" class="btn btn-ghost-light">
+                    <span data-i18n="hero.ctaSecondary">Naše služby</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="hero-mini-stats reveal">
+                <div class="mini-stat">
+                    <strong>5+</strong>
+                    <span data-i18n="hero.stat1">let na trhu</span>
+                </div>
+                <div class="mini-stat">
+                    <strong>24t</strong>
+                    <span data-i18n="hero.stat2">kapacita nákladu</span>
+                </div>
+                <div class="mini-stat">
+                    <strong>27</strong>
+                    <span data-i18n="hero.stat3">zemí EU</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="section services" id="services">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="section-tag">
+                <i class="fa-solid fa-cubes"></i>
+                <span data-i18n="services.tag">Naše služby</span>
+            </span>
+            <h2 class="section-title" data-i18n="services.title">
+                Kdykoli, kamkoli,<br>
+                <span class="title-accent">bez problémů.</span>
+            </h2>
+            <p class="section-lead" data-i18n="services.lead">
+                Tři pilíře naší přepravy — od jedné palety až po plný kamion.
+                Vždy s individuálním přístupem a maximální spolehlivostí.
+            </p>
+        </div>
+
+        <div class="services-grid">
+            <article class="service-card service-card-featured reveal" data-delay="0">
+                <div class="service-image" style="background-image: url('images/service-international.jpg');"></div>
+                <div class="service-badge" data-i18n="services.s1.badge">Nejžádanější</div>
+                <div class="service-number">01</div>
+                <div class="service-icon">
+                    <i class="fa-solid fa-globe-europe"></i>
+                </div>
+                <h3 data-i18n="services.s1.title">Mezinárodní</h3>
+                <p data-i18n="services.s1.text">
+                    Zajišťujeme transportní služby do celé Evropy.
+                    K dispozici máme vozidla různých velikostí pro náklady jakéhokoli rozsahu.
+                </p>
+                <ul class="service-features">
+                    <li><i class="fa-solid fa-check"></i> <span data-i18n="services.s1.f1">27 zemí EU</span></li>
+                    <li><i class="fa-solid fa-check"></i> <span data-i18n="services.s1.f2">Pojištění CMR</span></li>
+                    <li><i class="fa-solid fa-check"></i> <span data-i18n="services.s1.f3">Individuální přístup</span></li>
+                </ul>
+                <a href="#contact" class="service-link">
+                    <span data-i18n="services.s1.cta">Nezávazná poptávka</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </article>
+
+            <article class="service-card reveal" data-delay="100">
+                <div class="service-image" style="background-image: url('images/service-domestic.jpg');"></div>
+                <div class="service-number">02</div>
+                <div class="service-icon">
+                    <i class="fa-solid fa-truck-moving"></i>
+                </div>
+                <h3 data-i18n="services.s2.title">Vnitrostátní</h3>
+                <p data-i18n="services.s2.text">
+                    Pokrýváme celou Českou republiku. Převezeme pro vás vše až po
+                    náklad o hmotnosti 24 tuny — rychle, spolehlivě a šetrně.
+                </p>
+                <ul class="service-features">
+                    <li><i class="fa-solid fa-check"></i> <span data-i18n="services.s2.f1">100 % pokrytí ČR</span></li>
+                    <li><i class="fa-solid fa-check"></i> <span data-i18n="services.s2.f2">Náklad do 24 tun</span></li>
+                    <li><i class="fa-solid fa-check"></i> <span data-i18n="services.s2.f3">Pojištění CMR</span></li>
+                </ul>
+                <a href="#contact" class="service-link">
+                    <span data-i18n="services.s2.cta">Nezávazná poptávka</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </article>
+
+            <article class="service-card reveal" data-delay="200">
+                <div class="service-image" style="background-image: url('images/service-express.jpg');"></div>
+                <div class="service-number">03</div>
+                <div class="service-icon">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+                <h3 data-i18n="services.s3.title">Expresní</h3>
+                <p data-i18n="services.s3.text">
+                    Garantujeme dodávky podle přesně dohodnutého času a podmínek.
+                    Pro nejnaléhavější zásilky jsme tu 24/7.
+                </p>
+                <ul class="service-features">
+                    <li><i class="fa-solid fa-check"></i> <span data-i18n="services.s3.f1">Doručení 24/7</span></li>
+                    <li><i class="fa-solid fa-check"></i> <span data-i18n="services.s3.f2">Tracking v reálném čase</span></li>
+                    <li><i class="fa-solid fa-check"></i> <span data-i18n="services.s3.f3">Přímé doručení</span></li>
+                </ul>
+                <a href="#contact" class="service-link">
+                    <span data-i18n="services.s3.cta">Nezávazná poptávka</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="section stats-section">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat reveal">
+                <div class="stat-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                <div class="stat-number" data-target="5">0</div>
+                <div class="stat-suffix">+</div>
+                <div class="stat-label" data-i18n="stats.s1">let zkušeností</div>
+            </div>
+            <div class="stat reveal" data-delay="100">
+                <div class="stat-icon"><i class="fa-solid fa-truck-front"></i></div>
+                <div class="stat-number" data-target="12">0</div>
+                <div class="stat-suffix">+</div>
+                <div class="stat-label" data-i18n="stats.s2">vozidel ve flotile</div>
+            </div>
+            <div class="stat reveal" data-delay="200">
+                <div class="stat-icon"><i class="fa-solid fa-flag"></i></div>
+                <div class="stat-number" data-target="27">0</div>
+                <div class="stat-suffix"></div>
+                <div class="stat-label" data-i18n="stats.s3">zemí EU</div>
+            </div>
+            <div class="stat reveal" data-delay="300">
+                <div class="stat-icon"><i class="fa-solid fa-handshake"></i></div>
+                <div class="stat-number" data-target="98">0</div>
+                <div class="stat-suffix">%</div>
+                <div class="stat-label" data-i18n="stats.s4">spokojených klientů</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section about" id="about">
+    <div class="container about-grid">
+        <div class="about-visual reveal">
+            <div class="about-image-stack">
+                <img src="images/about-truck.jpg" alt="Mercedes Actros VM System" class="about-img-main">
+                <div class="about-badge glass">
+                    <i class="fa-solid fa-award"></i>
+                    <div>
+                        <strong data-i18n="about.badge.title">Spolehlivý partner</strong>
+                        <small data-i18n="about.badge.sub">od roku 2019</small>
+                    </div>
+                </div>
+                <div class="about-quote glass">
+                    <i class="fa-solid fa-quote-left"></i>
+                    <p data-i18n="about.quote">Kdykoli, kamkoli, bez problémů.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-content reveal">
+            <span class="section-tag">
+                <i class="fa-solid fa-building"></i>
+                <span data-i18n="about.tag">O nás</span>
+            </span>
+            <h2 class="section-title" data-i18n="about.title">
+                Mladá energie.<br>
+                <span class="title-accent">Léty prověřená spolehlivost.</span>
+            </h2>
+            <p data-i18n="about.p1">
+                Jsme mladá a perspektivní firma se sídlem v Brně. Naše společnost působí na trhu
+                již 5 let a za tu dobu si vybudovala pověst spolehlivého partnera, který vždy
+                dodrží své závazky.
+            </p>
+            <p data-i18n="about.p2">
+                Rozšiřujeme naše působení a s potěšením oznamujeme zahájení mezinárodní přepravy
+                po celé Evropě. Náš tým profesionálů je připraven nabídnout vám individuální přístup
+                ke každé zakázce a zajistit bezpečnou a včasnou přepravu vašeho nákladu.
+            </p>
+
+            <div class="about-features">
+                <div class="about-feature">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <div>
+                        <strong data-i18n="about.f1.title">Plně pojištěno</strong>
+                        <span data-i18n="about.f1.text">CMR pojištění pro mezinárodní přepravu</span>
+                    </div>
+                </div>
+                <div class="about-feature">
+                    <i class="fa-solid fa-leaf"></i>
+                    <div>
+                        <strong data-i18n="about.f2.title">EURO 6 flotila</strong>
+                        <span data-i18n="about.f2.text">Nejmodernější Mercedes-Benz Actros</span>
+                    </div>
+                </div>
+                <div class="about-feature">
+                    <i class="fa-solid fa-headset"></i>
+                    <div>
+                        <strong data-i18n="about.f3.title">Osobní přístup</strong>
+                        <span data-i18n="about.f3.text">Specialista, ne automatický bot</span>
+                    </div>
+                </div>
+                <div class="about-feature">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <strong data-i18n="about.f4.title">Sídlo v Brně</strong>
+                        <span data-i18n="about.f4.text">Strategická pozice v srdci Evropy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ FLEET ============ -->
+<section class="section fleet" id="fleet">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="section-tag">
+                <i class="fa-solid fa-truck-front"></i>
+                <span data-i18n="fleet.tag">Vozový park</span>
+            </span>
+            <h2 class="section-title" data-i18n="fleet.title">
+                Moderní flotila <span class="title-accent">Mercedes-Benz</span>
+            </h2>
+            <p class="section-lead" data-i18n="fleet.lead">
+                Naše vozidla splňují nejpřísnější standardy bezpečnosti, ekologie i pohodlí.
+            </p>
+        </div>
+
+        <div class="fleet-grid">
+            <div class="fleet-card fleet-card-big reveal">
+                <img src="images/fleet-actros.jpg" alt="Mercedes-Benz Actros L">
+                <div class="fleet-overlay">
+                    <span class="fleet-tag" data-i18n="fleet.c1.tag">Tahač</span>
+                    <h3>Mercedes-Benz Actros L</h3>
+                    <p data-i18n="fleet.c1.text">Vlajková loď naší flotily. EURO 6, prostorná kabina GigaSpace.</p>
+                </div>
+            </div>
+
+            <div class="fleet-card reveal" data-delay="100">
+                <img src="images/fleet-trailer.jpg" alt="Plachtový návěs MEGA">
+                <div class="fleet-overlay">
+                    <span class="fleet-tag" data-i18n="fleet.c2.tag">Návěs</span>
+                    <h3>Návěsy MEGA</h3>
+                    <p data-i18n="fleet.c2.text">Plachtové návěsy MEGA s kapacitou až 24 tun.</p>
+                </div>
+            </div>
+
+            <div class="fleet-card reveal" data-delay="200">
+                <img src="images/fleet-van.jpg" alt="Renault dodávky">
+                <div class="fleet-overlay">
+                    <span class="fleet-tag" data-i18n="fleet.c3.tag">Dodávky</span>
+                    <h3>Renault dodávky</h3>
+                    <p data-i18n="fleet.c3.text">Plachtové dodávky pro menší a expresní zásilky.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ CAREER ============ -->
+<section class="section career" id="career">
+    <div class="container">
+        <div class="career-wrap reveal">
+            <div class="career-bg-truck"></div>
+
+            <div class="career-content">
+                <span class="section-tag light">
+                    <i class="fa-solid fa-users"></i>
+                    <span data-i18n="career.tag">Kariéra</span>
+                </span>
+                <h2 class="section-title" data-i18n="career.title">
+                    Hledáme parťáka<br>
+                    <span class="title-accent-light">do našeho týmu.</span>
+                </h2>
+                <p data-i18n="career.text">
+                    Stabilní zaměstnání, moderní vozidla, atraktivní mzdové podmínky
+                    a možnost osobního růstu. U nás si dokážete ovlivnit svůj výdělek sami.
+                </p>
+
+                <div class="career-position glass-dark">
+                    <div class="career-position-head">
+                        <div>
+                            <h3 data-i18n="career.position.title">Řidič — Evropa</h3>
+                            <p data-i18n="career.position.sub">Skupina B, C, C+E</p>
+                        </div>
+                        <span class="career-position-badge">
+                            <i class="fa-solid fa-circle"></i>
+                            <span data-i18n="career.position.status">Otevřeno</span>
+                        </span>
+                    </div>
+                    <div class="career-position-meta">
+                        <span><i class="fa-solid fa-location-dot"></i> Brno</span>
+                        <span><i class="fa-solid fa-clock"></i> <span data-i18n="career.position.type">Plný úvazek</span></span>
+                        <span><i class="fa-solid fa-coins"></i> <span data-i18n="career.position.salary">Atraktivní mzda</span></span>
+                    </div>
+                </div>
+
+                <a href="mailto:info@luxpartner.cz" class="btn btn-white">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <span data-i18n="career.cta">Mám zájem</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ DOCUMENTS ============ -->
+<section class="section documents" id="documents">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="section-tag">
+                <i class="fa-solid fa-file-lines"></i>
+                <span data-i18n="docs.tag">Dokumenty</span>
+            </span>
+            <h2 class="section-title" data-i18n="docs.title">
+                Ke stažení <span class="title-accent">jedním klikem</span>
+            </h2>
+        </div>
+
+        <div class="docs-grid">
+            <a href="https://www.vm-system.cz/_files/ugd/dcbf24_47a2c47fc712470b867ab1ac730ad558.pdf" class="doc-card reveal" target="_blank" rel="noopener">
+                <div class="doc-icon">
+                    <i class="fa-solid fa-file-shield"></i>
+                </div>
+                <div class="doc-info">
+                    <h3 data-i18n="docs.d1.title">Pojištění</h3>
+                    <p data-i18n="docs.d1.text">Doklad o pojištění odpovědnosti přepravce</p>
+                    <span class="doc-meta">PDF · 1 MB</span>
+                </div>
+                <div class="doc-arrow">
+                    <i class="fa-solid fa-download"></i>
+                </div>
+            </a>
+
+            <a href="https://www.vm-system.cz/_files/ugd/dcbf24_d40fa25dafe2433ca0154b4be5f56a8e.pdf" class="doc-card reveal" data-delay="100" target="_blank" rel="noopener">
+                <div class="doc-icon">
+                    <i class="fa-solid fa-certificate"></i>
+                </div>
+                <div class="doc-info">
+                    <h3 data-i18n="docs.d2.title">Eurolicence</h3>
+                    <p data-i18n="docs.d2.text">Licence pro mezinárodní silniční dopravu</p>
+                    <span class="doc-meta">PDF · 800 KB</span>
+                </div>
+                <div class="doc-arrow">
+                    <i class="fa-solid fa-download"></i>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section contact" id="contact">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="section-tag">
+                <i class="fa-solid fa-envelope"></i>
+                <span data-i18n="contact.tag">Kontakt</span>
+            </span>
+            <h2 class="section-title" data-i18n="contact.title">
+                Pojďme se <span class="title-accent">domluvit</span>
+            </h2>
+            <p class="section-lead" data-i18n="contact.lead">
+                Ozvěte se nám pro nezávaznou kalkulaci. Odpovídáme do 24 hodin.
+            </p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-info reveal">
+                <div class="contact-card glass">
+                    <h3 data-i18n="contact.info.title">VM SYSTEM s.r.o.</h3>
+
+                    <div class="contact-item">
+                        <div class="contact-item-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <small data-i18n="contact.info.addressLabel">Adresa</small>
+                            <strong>Olomoucká 260/12<br>618 00 Brno, Česká republika</strong>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-item-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                            <small data-i18n="contact.info.emailLabel">E-mail</small>
+                            <a href="mailto:info@luxpartner.cz"><strong>info@luxpartner.cz</strong></a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-item-icon"><i class="fa-solid fa-clock"></i></div>
+                        <div>
+                            <small data-i18n="contact.info.hoursLabel">Provozní doba</small>
+                            <strong data-i18n="contact.info.hours">Po — Pá  ·  08:00 — 18:00</strong>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-item-icon"><i class="fa-solid fa-id-card"></i></div>
+                        <div>
+                            <small data-i18n="contact.info.idLabel">IČO / DIČ</small>
+                            <strong>IČO: 07716745<br>DIČ: CZ07716745</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-map glass">
+                    <iframe
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=16.6280%2C49.1865%2C16.6480%2C49.1965&amp;layer=mapnik&amp;marker=49.1915%2C16.6380"
+                        loading="lazy"
+                        title="VM System location">
+                    </iframe>
+                </div>
+            </div>
+
+            <form class="contact-form glass reveal" data-delay="150" id="contactForm">
+                <h3 data-i18n="contact.form.title">Pošlete nám zprávu</h3>
+
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="fname" data-i18n="contact.form.fname">Jméno</label>
+                        <input type="text" id="fname" name="fname" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="lname" data-i18n="contact.form.lname">Příjmení</label>
+                        <input type="text" id="lname" name="lname" required>
+                    </div>
+                </div>
+
+                <div class="form-field">
+                    <label for="email" data-i18n="contact.form.email">E-mail</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="phone" data-i18n="contact.form.phone">Telefon</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+
+                <div class="form-field">
+                    <label for="service" data-i18n="contact.form.service">Typ přepravy</label>
+                    <select id="service" name="service">
+                        <option data-i18n="contact.form.service.opt1">Mezinárodní přeprava</option>
+                        <option data-i18n="contact.form.service.opt2">Vnitrostátní přeprava</option>
+                        <option data-i18n="contact.form.service.opt3">Expresní přeprava</option>
+                        <option data-i18n="contact.form.service.opt4">Jiné</option>
+                    </select>
+                </div>
+
+                <div class="form-field">
+                    <label for="message" data-i18n="contact.form.message">Vaše zpráva</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <span data-i18n="contact.form.submit">Odeslat zprávu</span>
+                </button>
+
+                <div class="form-success" id="formSuccess">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span data-i18n="contact.form.success">Děkujeme! Brzy se vám ozveme.</span>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="#home" class="nav-logo">
+                    <img src="images/logo-footer.png" alt="VM System">
+                </a>
+                <p data-i18n="footer.about">
+                    Profesionální a spolehlivý partner v mezinárodní i vnitrostátní silniční přepravě.
+                    Sídlem v Brně, působením po celé Evropě.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4 data-i18n="footer.col1.title">Služby</h4>
+                <a href="#services" data-i18n="footer.col1.l1">Mezinárodní přeprava</a>
+                <a href="#services" data-i18n="footer.col1.l2">Vnitrostátní přeprava</a>
+                <a href="#services" data-i18n="footer.col1.l3">Expresní doručení</a>
+            </div>
+
+            <div class="footer-col">
+                <h4 data-i18n="footer.col2.title">Společnost</h4>
+                <a href="#about" data-i18n="footer.col2.l1">O nás</a>
+                <a href="#career" data-i18n="footer.col2.l2">Kariéra</a>
+                <a href="#documents" data-i18n="footer.col2.l3">Dokumenty</a>
+                <a href="#contact" data-i18n="footer.col2.l4">Kontakt</a>
+            </div>
+
+            <div class="footer-col">
+                <h4 data-i18n="footer.col3.title">Kontakt</h4>
+                <a href="mailto:info@luxpartner.cz">info@luxpartner.cz</a>
+                <span>Olomoucká 260/12<br>618 00 Brno, ČR</span>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 VM System s.r.o. <span data-i18n="footer.rights">Všechna práva vyhrazena.</span></span>
+            <div class="footer-links">
+                <a href="#" data-i18n="footer.privacy">Ochrana osobních údajů</a>
+                <a href="#" data-i18n="footer.cookies">Cookies</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Back to top button -->
+<button class="back-to-top" id="backToTop" aria-label="Zpět nahoru">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
